@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Merriweather;
+    src: url(fonts/Merriweather-Regular.ttf);
+}
+
+body{
+    background-color: black;
+}
+
+header, footer, main{
+    margin: 0 100px;
+    font-family: Merriweather;
+    background-color: rgb(255, 255, 255);
+}
+
+/* ------------------ HEADER ------------------*/
+
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
