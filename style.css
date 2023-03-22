@@ -209,3 +209,36 @@ section{
     height: 336px;
     background-color: #616161;
 }
+
+/* ------------------ SECTION 4 ------------------*/
+
+#section4{
+    margin: 0px 0;
+}
+
+#section4 > h2{
+    font-size: 60px;
+    text-align: center;
+}
+
+#section4 > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#section4 > div > div{
+    margin: 0 10px;
+}
+
+#section4 > div > div > img{
+    margin: 0;
+    padding: 0;
+    width: 210px;
+}
+
+#section4 > div > div > p{
+    text-align: center;
+    font-size: 20px;
+}
