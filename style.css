@@ -18,6 +18,9 @@
     
     /*------ SECTION 3 ------*/
     --height-witdh-imagens-section3: 330px;
+    
+    /*------ SECTION 5 ------*/
+    --tamanho-imagem-section5: 300px;
 
 }
 
@@ -242,3 +245,23 @@ section{
     text-align: center;
     font-size: 20px;
 }
+
+/* ------------------ SECTION 5 ------------------*/
+
+#section5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section5 img{
+    width: var(--tamanho-imagem-section5);
+    height: var(--tamanho-imagem-section5);
+}
+
+#section5 div:nth-child(2){
+    width: 400px;
+    height: var(--tamanho-imagem-section5);
+}
+
+
