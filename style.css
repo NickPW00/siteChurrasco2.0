@@ -15,6 +15,10 @@
 
     /*------ SECTION 2 ------*/
     --height-witdh-imagens-section2: 120px;
+    
+    /*------ SECTION 3 ------*/
+    --height-witdh-imagens-section3: 330px;
+
 }
 
 @font-face {
@@ -179,4 +183,29 @@ section{
     text-align: center;
     width: 400px;
     height: 300px;
+}
+
+/* ------------------ SECTION 3 ------------------*/
+
+#section3{
+    padding: 0px;
+    text-align: center;
+    height: 600px;
+}
+
+#section3 div:nth-child(1) img{
+    width: var(--height-witdh-imagens-section3);
+    height: var(--height-witdh-imagens-section3);
+    padding: 0;
+    margin: -2px;
+}
+
+#section3 div:nth-child(2){
+    position: relative;
+    bottom: 501px;
+    left: 254px;
+    text-align: center;
+    width: 485px;
+    height: 336px;
+    background-color: #616161;
 }
