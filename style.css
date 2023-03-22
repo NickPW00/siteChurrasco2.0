@@ -264,4 +264,10 @@ section{
     height: var(--tamanho-imagem-section5);
 }
 
+/* ------------------ SECTION 6 ------------------*/
+
+#section6 > iframe{
+    width: 600px; 
+    height:450px
+}
 
