@@ -5,11 +5,16 @@
     --tamanho-figuras-nav: 40px;
     --tamanho-figuras-logo: 200px;
     
+    --padding-sections: 30px;
+
     /*------ SECTION 1 ------*/
     --tamanho-card: 600px;
     --cor-card-vinho: #741A1A;
     --height-imagens-section1: calc((360px / 205px) * var(--witdh-imagens-section1)); /* 474px; */
     --witdh-imagens-section1: 270px;
+
+    /*------ SECTION 2 ------*/
+    --height-witdh-imagens-section2: 120px;
 }
 
 @font-face {
@@ -107,8 +112,13 @@ nav figure img{
 /* ------------------ MAIN ------------------*/
 
 main{
-    background-color: #E0E0D0;
+    background-color: #E0E0E0;
 } 
+
+section{
+    margin: 40px 0;
+    padding: var(--padding-sections);
+}
 
 /* ------------------ SECTION 1 ------------------*/
 
@@ -130,7 +140,7 @@ main{
     height: var(--height-imagens-section1);
 }
 
-#section1 div:nth-child(2){
+#section1 .cardVermelho{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -138,6 +148,36 @@ main{
     top: 87px;
     text-align: center;
     width: var(--tamanho-card);
+    height: 300px;
+    background-color: var(--cor-card-vinho);
+    color: white;
+}
+
+/* ------------------ SECTION 2 ------------------*/
+
+#section2{
+    height: 500px;
+}
+
+#section2 > div > div > img{
+    width: var(--height-witdh-imagens-section2);
+    height: var(--height-witdh-imagens-section2);
+    margin: 7px;
+}
+
+#section2 > div{
+    text-align: right;
+    padding: 0 var(--padding-sections);
+}
+
+#section2 .cardVermelho{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom:350px;
+    left: 30px;
+    text-align: center;
+    width: 400px;
     height: 300px;
     background-color: var(--cor-card-vinho);
     color: white;
