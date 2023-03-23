@@ -266,8 +266,19 @@ section{
 
 /* ------------------ SECTION 6 ------------------*/
 
-#section6 > iframe{
-    width: 600px; 
-    height:450px
+#section6{
+    text-align: right;
 }
 
+
+#section6 > iframe{
+    width: 600px; 
+    height:450px;
+    border: 0;
+}
+
+#section6 > .cardVermelho{
+    width: 350px;
+    height: 300px;
+    bottom: 400px;
+}
