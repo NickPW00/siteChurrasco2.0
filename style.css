@@ -1,4 +1,7 @@
 :root{
+    /* ------ TODOS ------ */
+    --cor-da-fonte: white;
+
     /*------ HEADER ------*/
     --tamanho-tela-width: 1000px;
     --tamanho-tela-height: 683px;
@@ -120,6 +123,7 @@ nav figure img{
 
 main{
     background-color: #E0E0E0;
+    
 } 
 
 section{
@@ -268,6 +272,7 @@ section{
 
 #section6{
     text-align: right;
+    height: 550px;
 }
 
 
@@ -281,4 +286,56 @@ section{
     width: 350px;
     height: 300px;
     bottom: 400px;
+    left: 10px;
+}
+
+/* ------------------ FOOTER ------------------*/
+
+footer{
+    background-color: #393939;
+    color: var(--cor-da-fonte);
+}
+
+footer #ultimasDescricoes{
+    display: flex;
+    justify-content: center;
+}
+
+footer #ultimasDescricoes div{
+    width: calc(var(--tamanho-tela-width) / 3);
+    text-align: center;
+}
+
+footer #ultimasDescricoes #social, footer #ultimasDescricoes #contatos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid white 1px;
+}
+
+footer #ultimasDescricoes #social p, footer #ultimasDescricoes #contatos p{
+    border-bottom: solid var(--cor-da-fonte) 1px;
+}
+
+footer #ultimasDescricoes p{
+    width: calc((var(--tamanho-tela-width) / 3) - 100px);;
+}
+
+footer #ultimasDescricoes #social img{
+    margin: 0 5px;
+}
+
+footer > #direitosAutorais{
+    text-align: center;
+    /* font-weight: bold; */
+    background-color: #222222;
+}
+footer > #direitosAutorais > p{
+    margin: 0;
+    padding: 5px;
+    color: var(--cor-da-fonte);
+}
+
+footer > #direitosAutorais > p > span {
+    margin: 20px
 }
