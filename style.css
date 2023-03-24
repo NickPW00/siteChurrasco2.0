@@ -109,6 +109,16 @@ nav figure{
     font-size: 15px;
 }
 
+nav a{
+    color: var(--cor-da-fonte);
+    text-decoration: none;
+}
+
+nav a:hover{
+    background-color: #39393950;
+    box-shadow:  5px 5px 5px black;
+}
+
 nav figure figcaption{
     margin: 5px 0 0;
 }
