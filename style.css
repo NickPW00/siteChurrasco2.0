@@ -148,6 +148,7 @@ section{
     text-align: center;
     background-color: var(--cor-card-vinho);
     color: white;
+    padding: 0 20px;
 }
 
 /* ------------------ SECTION 1 ------------------*/
@@ -175,6 +176,9 @@ section{
     top: 87px;
     width: var(--tamanho-card);
     height: 300px;
+}
+#section3 .cardVermelho p ul li{
+    list-style: none;
 }
 
 /* ------------------ SECTION 2 ------------------*/
