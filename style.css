@@ -308,6 +308,7 @@ section{
 footer{
     background-color: #393939;
     color: var(--cor-da-fonte);
+    padding: 15px 0 0 0;
 }
 
 footer #ultimasDescricoes{
@@ -316,6 +317,7 @@ footer #ultimasDescricoes{
 }
 
 footer #ultimasDescricoes div{
+    display: flex;
     width: calc(var(--tamanho-tela-width) / 3);
     text-align: center;
 }
@@ -324,15 +326,29 @@ footer #ultimasDescricoes #social, footer #ultimasDescricoes #contatos{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: solid white 1px;
+}
+
+footer #ultimasDescricoes div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer #ultimasDescricoes div:first-child p{
+    margin: 5px 0;
+}
+
+footer #ultimasDescricoes div:first-child p:nth-child(3){
+    font-size: 12px;
+    padding: 0 20px
 }
 
 footer #ultimasDescricoes #social p, footer #ultimasDescricoes #contatos p{
     border-bottom: solid var(--cor-da-fonte) 1px;
 }
 
-footer #ultimasDescricoes p{
-    width: calc((var(--tamanho-tela-width) / 3) - 100px);;
+footer #ultimasDescricoes #social img{
+    margin: 0 5px;
 }
 
 footer #ultimasDescricoes #social img{
@@ -344,12 +360,28 @@ footer > #direitosAutorais{
     /* font-weight: bold; */
     background-color: #222222;
 }
+
 footer > #direitosAutorais > p{
     margin: 0;
     padding: 5px;
     color: var(--cor-da-fonte);
+    font-size: 10px;
 }
 
 footer > #direitosAutorais > p > span {
     margin: 20px
+}
+
+#icones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------ Fixed ------------------*/
+
+#logoDoWhatsapp img{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
