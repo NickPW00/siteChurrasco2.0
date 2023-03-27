@@ -10,35 +10,44 @@
 <body>
     <header>
         <div id="logoEhLema">
-            <img src="icons/header/Component 7.svg" alt="Logo" title="Chapeu de Viking com duas facas.">
-            <h3>O Rustico com Qualidade</h3>
+            <a href="index.html"><img src="icons/header/Component 7.svg" alt="Logo" title="Chapeu de Viking com duas facas."></a>
+            <h3>"O Rustico com Qualidade."</h3>
         </div>
         <h1>Formulário</h1>
     </header>
 
     <main>
         <form id="formulario">
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome" value="John"><br>
-            <label for="email">Email</label><br>
-            <input type="text" id="email" name="email" value="Doe"><br>
-            <label for="telefone">Telefone</label><br>
-            <input type="text" id="telefone" name="telefone" value="Doe"><br>
+            <label for="nome">Insira seu nome:</label><br>
+            <input type="text" id="nome" name="nome" value="" placeholder="Nome"><br>
+            <label for="email">Insira seu email:</label><br>
+            <input type="text" id="email" name="email" value="" placeholder="Email"><br>
+            <label for="telefone">Insira Seu telefone:</label><br>
+            <input type="text" id="telefone" name="telefone" value="" placeholder="Telefone"><br>
         </form>
         
         <div>
-
+            <p>Preferência</p>
+            <div id="caixaDoRadio">
+                <div class="radioC1"><div class="radioC2"><div class="radioC3"></div></div><p>Ambas</p></div>
+                <div class="radioC1"><div class="radioC2"><div class="radioC3"></div></div><p>Carnes Exóticas</p></div>
+                <div class="radioC1"><div class="radioC2"><div class="radioC3"></div></div><p>Carnes Tradicionais</p></div>
+                
+                <div></div>
+            </div>
         </div>
 
-        <div id="preferencias">
-            <p>Preferências</p>
-            <div id="select">Selecione</div>
-            <div id="selectBox" class="hidden">
-                <div>Bovina</div>
-                <div>Suina</div>
-                <div>Aves</div>
-                <div>Frutos do Mar</div>
-                <div>Outros</div>
+        <div id="selecionar">
+            <p>Tipo de carne favorita </p>
+            <div id="caixaDoSeletor">
+                <div id="select">Selecione</div>
+                <div id="selectBox" class="hidden">
+                    <div>Bovina</div>
+                    <div>Suina</div>
+                    <div>Aves</div>
+                    <div>Frutos do Mar</div>
+                    <div>Outros</div>
+                </div>
             </div>
         </div>
 
