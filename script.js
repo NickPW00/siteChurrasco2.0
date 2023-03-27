@@ -25,9 +25,19 @@ select.addEventListener("click", _ => {
 
 let radioC2 = qsA(".radioC2");
 let radioC3 = qsA(".radioC3");
+let ambos = qs("#ambos");
 
-radioC2.forEach(a => a.onclick = marcar) 
+// ----toggle AMBOS --- 
+
+ambos.onclick = (_ => {
+    radioC3.forEach(el=> el.classList.toggle("marcado"));
+})
+
+
+// ----toggle normal --- 
+
+radioC3.forEach(a => a.onclick = marcar) 
 
 function marcar() {
-    radioC3.forEach(el => el.classList.toggle("marcado"))
+    radioC3.forEach(_ => event.target.classList.toggle("marcado"))
 }
