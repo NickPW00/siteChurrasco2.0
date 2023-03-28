@@ -35,8 +35,6 @@ header #logoEhLema h3{
 
 
 
-
-
 #caixaDoRadio{
     margin: 10px;
 }
@@ -71,6 +69,9 @@ header #logoEhLema h3{
     background-color: rgb(0, 101, 148);
 }
 
+.marcadoMetade{
+    background-color: rgb(101 , 148, 0);
+}
 
 
 main form input, main form input:focus{
@@ -92,6 +93,8 @@ main form input, main form input:focus{
 .hidden{
     display: none;
 }
+
+
 
 
 footer{
