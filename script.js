@@ -25,13 +25,25 @@ select.addEventListener("click", _ => {
 
 let radioC2 = qsA(".radioC2");
 let radioC3 = qsA(".radioC3");
-let ambos = qs("#ambos");
+let ambos = qs(".ambos");
+let todosMarcados = false
 
 // ----toggle AMBOS --- 
 
-ambos.onclick = (_ => {
-    radioC3.forEach(el=> el.classList.toggle("marcado"));
-})
+ambos.onclick = marcarTodos
+
+function marcarTodos() {
+    ambos.classList.toggle("marcado")
+    radioC3.forEach(el => {el.classList.toggle("marcado");})
+    
+    if(todosMarcados == false){
+        radioC3.forEach(el => {el.classList.add("marcado");})
+        todosMarcados = true
+    } else if(todosMarcados == true){
+        radioC3.forEach(el => {el.classList.remove("marcado");})
+        todosMarcados = false
+    }
+}; 
 
 
 // ----toggle normal --- 
@@ -39,5 +51,6 @@ ambos.onclick = (_ => {
 radioC3.forEach(a => a.onclick = marcar) 
 
 function marcar() {
-    radioC3.forEach(_ => event.target.classList.toggle("marcado"))
-}
+    event.target.classList.toggle("marcado")
+    todosMarcados = true
+};
