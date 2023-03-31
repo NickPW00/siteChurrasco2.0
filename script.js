@@ -45,18 +45,6 @@ function marcarTodos() {
         ambos.classList.toggle("marcado")
         radioC3.forEach(el => {el.classList.toggle("marcado");})
     }
-
-    /* ambos.classList.remove("marcadoMetade")
-    ambos.classList.toggle("marcado")
-    radioC3.forEach(el => {el.classList.toggle("marcado");}) */
-    /* 
-    if(todosMarcados == false){
-        radioC3.forEach(el => {el.classList.add("marcado");})
-        todosMarcados = true
-    } else if(todosMarcados == true){
-        radioC3.forEach(el => {el.classList.remove("marcado");})
-        todosMarcados = false
-    } */
 }; 
 
 
@@ -70,3 +58,34 @@ function marcar() {
     ambos.classList.remove("marcado")
     ambos.classList.add("marcadoMetade")
 };
+
+// CheckBox
+/* 
+ambos.onclick = marcarTodos
+
+function marcarTodos() {
+    if(ambos.classList.contains("marcado")){
+        ambos.classList.toggle("marcado")
+        radioC3.forEach(el => {el.classList.remove("marcado");})
+    }
+    else if(ambos.classList.contains("marcadoMetade")){
+        ambos.classList.remove("marcadoMetade")
+        radioC3.forEach(el => {el.classList.remove("marcado");})
+    }
+    else{
+        ambos.classList.toggle("marcado")
+        radioC3.forEach(el => {el.classList.toggle("marcado");})
+    }
+}; 
+
+
+// ----toggle normal --- 
+
+radioC3.forEach(a => a.onclick = marcar) 
+
+function marcar() {
+    radioC3.forEach(a => a.classList.remove("marcado"));
+    event.target.classList.toggle("marcado");
+    ambos.classList.remove("marcado")
+    ambos.classList.add("marcadoMetade")
+}; */
