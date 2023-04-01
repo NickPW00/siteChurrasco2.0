@@ -1,91 +1,136 @@
 let qs = id => document.querySelector(`${id}`);
 let qsA = id => document.querySelectorAll(`${id}`);
 
-// ----------------- Select ------------------
+// ----------------- Nome --------------------
 
-let select = qs("#select");
-let selectBox = qs("#selectBox");
-let selectBoxChildren = qsA("#selectBox div");
+let validacoes = {
+    nome: false,
+    email:false,
+    telefone: false,
+    check: false,
+    cpf: false,
+    data: false,
+    endereco: false,
+  }
 
-console.log(select);
-console.log(selectBox.children);
+let nome = qs("#nome");
 
-select.addEventListener("click", _ => {
-    selectBox.classList.toggle("hidden");
-    selectBoxChildren.forEach(elemento => {
-        elemento.onclick = _ =>{
-        let alvo = event.target;
-        select.innerHTML = alvo.innerHTML;
-        selectBox.classList.toggle("hidden");
+function validaNome() {
+    let nomeArray = nome.value.split("")
+    seEntao(nomeArray.indexOf(" ") > -1, "nome");
+}
+
+let email = qs("#email"); 
+
+function validacaoEmail() {
+    let chave1 = false
+    let chave2 = false
+    let eAiOf = emailArray.indexOf("@")
+    emailArray = email.value.split("")
+    emailArray.forEach(el => {
+        if(el === "@") {
+        emailArray.forEach(le => {if(le === "."){chave1 = true}})
         }
-    });
-});
+    })
+    if(emailArray.indexOf("@") < emailArray.indexOf(".", eAiOf + 1)){
+        chave2 = true
+    }
+    if(chave1 && chave2){validacoes.email = true}
+}
+
+let telefone = qs("#telefone")
+
+function validacaoTelefone() {
+    let telefoneArray = telefone.value.replaceAll(/[()-]/g, "").split("");
+    seEntao(telefoneArray.length === 11, "telefone")
+}
+
+function seEntao(sentenca, lugar) {
+    if(sentenca) {validacoes[`${lugar}`] = true;} 
+            else {validacoes[`${lugar}`] = false;}
+}
 
 // ----------------- Radio ------------------
 
-let radioC2 = qsA(".radioC2");
 let radioC3 = qsA(".radioC3");
-let ambos = qs(".ambos");
-let todosMarcados = false
-
-// ----toggle AMBOS --- 
-
-ambos.onclick = marcarTodos
-
-function marcarTodos() {
-    if(ambos.classList.contains("marcado")){
-        ambos.classList.toggle("marcado")
-        radioC3.forEach(el => {el.classList.remove("marcado");})
-    }
-    else if(ambos.classList.contains("marcadoMetade")){
-        ambos.classList.remove("marcadoMetade")
-        radioC3.forEach(el => {el.classList.remove("marcado");})
-    }
-    else{
-        ambos.classList.toggle("marcado")
-        radioC3.forEach(el => {el.classList.toggle("marcado");})
-    }
-}; 
-
-
-// ----toggle normal --- 
 
 radioC3.forEach(a => a.onclick = marcar) 
 
 function marcar() {
     radioC3.forEach(a => a.classList.remove("marcado"));
     event.target.classList.toggle("marcado");
-    ambos.classList.remove("marcado")
-    ambos.classList.add("marcadoMetade")
+    for(let a of radioC3){
+        if(a.classList.contains("marcado")){
+            validacoes.check = true
+        }
+    }
 };
 
 // CheckBox
-/* 
-ambos.onclick = marcarTodos
+
+let check = qsA(".check");
+let meios = qs(".meios");
+
+meios.onclick = marcarTodos
 
 function marcarTodos() {
-    if(ambos.classList.contains("marcado")){
-        ambos.classList.toggle("marcado")
-        radioC3.forEach(el => {el.classList.remove("marcado");})
+    if(meios.classList.contains("marcado")){
+        meios.classList.toggle("marcado")
+        check.forEach(el => {el.classList.remove("marcado");})
     }
-    else if(ambos.classList.contains("marcadoMetade")){
-        ambos.classList.remove("marcadoMetade")
-        radioC3.forEach(el => {el.classList.remove("marcado");})
+    else if(meios.classList.contains("marcadoMetade")){
+        meios.classList.remove("marcadoMetade")
+        check.forEach(el => {el.classList.remove("marcado");})
     }
     else{
-        ambos.classList.toggle("marcado")
-        radioC3.forEach(el => {el.classList.toggle("marcado");})
+        meios.classList.toggle("marcado")
+        check.forEach(el => {el.classList.toggle("marcado");})
     }
 }; 
 
+let todosMarcados = false
+let nenhumMarcado = true
 
-// ----toggle normal --- 
-
-radioC3.forEach(a => a.onclick = marcar) 
+check.forEach(a => a.onclick = marcar) 
 
 function marcar() {
-    radioC3.forEach(a => a.classList.remove("marcado"));
-    event.target.classList.toggle("marcado");
-    ambos.classList.remove("marcado")
-    ambos.classList.add("marcadoMetade")
-}; */
+    if(event.target.classList.contains("marcado")){
+        event.target.classList.remove("marcado");
+        checagemDeTodos()
+        if(todosMarcados === false){ 
+            meios.classList.remove("marcado");
+            meios.classList.add("marcadoMetade");
+        }
+        if(nenhumMarcado === true){
+            meios.classList.remove("marcadoMetade");
+        }
+    } else {
+        event.target.classList.add("marcado");
+        checagemDeTodos()
+        if(todosMarcados === true){
+            meios.classList.add("marcado")
+            meios.classList.remove("marcadoMetade")
+        } else if(nenhumMarcado === false){
+            meios.classList.add("marcadoMetade");
+        }
+    }
+}; 
+
+function checagemDeTodos(){
+    for(let el of check){
+        if(el.classList.contains("marcado")){
+            todosMarcados = true
+        }
+        else{
+            todosMarcados = false; break;
+        }
+    }
+    for(let el of check){
+        if(!el.classList.contains("marcado")){
+            nenhumMarcado = true
+        }
+        else{
+            nenhumMarcado = false; break;
+        }
+    }
+}

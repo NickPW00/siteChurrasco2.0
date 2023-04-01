@@ -65,6 +65,20 @@ header #logoEhLema h3{
     background-color: rgb(59, 193, 255);
 }
 
+#caixaDoCheck, #caixaDoCheck > div{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+ 
+.check, .meios{
+    border: solid black 1px;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px
+}
+
+
 .marcado{
     background-color: rgb(0, 101, 148);
 }
